@@ -39,7 +39,7 @@ show collections
 ## Insert Row
 
 ```
-db.users.insert({
+db.users.insertOne({
   title: 'Post One',
   body: 'Body of post one',
   category: 'News',
@@ -149,7 +149,7 @@ db.users.find({ title: 'Post One' }, {
 ## Update Row
 
 ```
-db.users.update({ title: 'Post Two' },
+db.users.updateOne({ title: 'Post Two' },
 {
   title: 'Post Two',
   body: 'New body for post 2',
@@ -163,7 +163,7 @@ db.users.update({ title: 'Post Two' },
 ## Update Specific Field
 
 ```
-db.users.update({ title: 'Post Two' },
+db.users.updateOne({ title: 'Post Two' },
 {
   $set: {
     body: 'Body for post 2',
@@ -186,7 +186,7 @@ db.users.update({ title: 'Post Two' },
 ## Rename Field
 
 ```
-db.users.update({ title: 'Post Two' },
+db.users.updateOne({ title: 'Post Two' },
 {
   $rename: {
     likes: 'views'
@@ -203,7 +203,7 @@ db.users.remove({ title: 'Post Four' })
 ## Sub-Documents
 
 ```
-db.users.update({ title: 'Post One' },
+db.users.updateOne({ title: 'Post One' },
 {
   $set: {
     comments: [
