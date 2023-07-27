@@ -83,6 +83,34 @@ db.users.insertMany([
 db.users.find()
 ```
 
+
+## Get Conditional Data
+```
+db.users.find(
+    {$and: 
+        [
+            {id : 
+                {$gt: 5}
+            }, 
+            {id : {$lt: 7}
+            }
+        ]
+    }
+    )
+
+
+    db.users.find(
+        {$or: 
+            [
+                {id : {$gt: 5}
+                }, 
+                {id : {$lt: 7}
+                }
+            ]
+        }
+        )
+```
+
 ## Get All Rows Formatted
 
 ```
